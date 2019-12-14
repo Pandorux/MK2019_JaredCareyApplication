@@ -23,6 +23,11 @@ public class ScoreSystem : MonoBehaviour
         return (int)score;
     }
 
+    public int GetMultiplier() 
+    {
+        return (int)scoreMultiplier;
+    }
+
     public void AddPoints(int points) 
     {
         score += points * scoreMultiplier;
