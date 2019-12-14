@@ -14,6 +14,29 @@ public class Player : MonoBehaviour
         Movement();
     }
 
+    void PlayerInput()
+    {
+        #if UNITY_EDITOR
+
+            if(Input.getKeyDown(Keycode.Space) 
+            || Input.getKeyDown(Keycode.UpArrow)
+            || Input.getKeyDown(Keycode.W))
+            {
+                // TODO: Jump
+            }
+
+            if(Input.getKeyDown(Keycode.Escape))
+            {
+                // TODO: Pause the Game
+            }
+
+        #elif UNITY_ANDROID
+
+            // TODO: Mobile Input
+
+        #endif 
+    }
+
     void Movement()
     {
         float translate = movementSpeed * Time.deltaTime;
