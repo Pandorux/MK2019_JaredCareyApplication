@@ -250,9 +250,12 @@ MonoBehaviour:
   maxNumberOfTerrainSets: 100
   terrainSets:
   - {fileID: 4422206961955084349, guid: 0a2d3ead48af2194e8cfc384a4e0b108, type: 3}
-  - {fileID: 9024787442730123733, guid: ba6b20dfc09f4c7498cb3deda835af4a, type: 3}
-  - {fileID: 581190143087080618, guid: e7243facd09660b4490d20fd0c45f16f, type: 3}
+  - {fileID: 3443929866743970552, guid: cdfd13ad7c8fb7b4baff0bf35adfadb6, type: 3}
+  - {fileID: 7776447292124695784, guid: 1144df2566959b74eadef859a36d0340, type: 3}
+  - {fileID: 382357398715538119, guid: 5e2373d72a67c4d41954ff9b81989bf3, type: 3}
   - {fileID: 3056130128801603668, guid: 5d3c615e034e19145894db75e67a126b, type: 3}
+  - {fileID: 581190143087080618, guid: e7243facd09660b4490d20fd0c45f16f, type: 3}
+  - {fileID: 9024787442730123733, guid: ba6b20dfc09f4c7498cb3deda835af4a, type: 3}
   - {fileID: 201187451671344972, guid: ee04957df4356cc43b3ec7529863af92, type: 3}
   startingTerrainSet: {fileID: 4422206961955084349, guid: 0a2d3ead48af2194e8cfc384a4e0b108,
     type: 3}
@@ -416,6 +419,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameUI
       objectReference: {fileID: 0}
+    - target: {fileID: 4913801051738254332, guid: 9b60f20ba054b9a44b5f00ace850db99,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6378603416171705620, guid: 9b60f20ba054b9a44b5f00ace850db99,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -536,11 +544,6 @@ PrefabInstance:
       propertyPath: gameOverText
       value: 
       objectReference: {fileID: 867642850}
-    - target: {fileID: 4913801051738254332, guid: 9b60f20ba054b9a44b5f00ace850db99,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9b60f20ba054b9a44b5f00ace850db99, type: 3}
 --- !u!1001 &7017986208829913736
