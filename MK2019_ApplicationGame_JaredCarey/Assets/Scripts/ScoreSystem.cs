@@ -13,7 +13,6 @@ public class ScoreSystem : MonoBehaviour
     protected float pointsIncreaseRate = 1;
     protected float scoreMultiplier = 1;
 
-
     public event Action onScoreChange;
     public void onScoreChanged()
     {
@@ -26,6 +25,7 @@ public class ScoreSystem : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        GameManager.onPlayerDie += ShowEndGameScreen;
         StartCoroutine(IncreaseScoreOverTime(pointsIncreaseRate));
     }
 
@@ -57,6 +57,11 @@ public class ScoreSystem : MonoBehaviour
         yield return new WaitForSeconds(delay);
         AddPoints(1);
         StartCoroutine(IncreaseScoreOverTime(pointsIncreaseRate));
+    }
+
+    protected void ShowEndGameScreen() 
+    {
+
     }
 
 }
