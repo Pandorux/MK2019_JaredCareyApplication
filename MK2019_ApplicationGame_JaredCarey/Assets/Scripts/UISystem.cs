@@ -11,11 +11,14 @@ public class UISystem : MonoBehaviour
     protected ScoreSystem scoreSystem;
     public TMP_Text scoreText;
     public TMP_Text multiplierText;
+    public GameObject gameOverScreen;
+    public TMP_Text gameOverText;
 
     // Start is called before the first frame update
     void Start()
     {
         scoreSystem.onScoreChange += UpdateUI;
+        GameManager.onPlayerDie += ShowGameOverScreen;
         UpdateUI();
     }
 
@@ -45,6 +48,15 @@ public class UISystem : MonoBehaviour
         {
             scoreText.text = $"Score: {scoreSystem.GetScore()}";
             multiplierText.text = $"x{scoreSystem.GetMultiplier()}";
+        }
+    }
+
+    protected void ShowGameOverScreen()
+    {
+        if(gameOverScreen != null)
+        {
+            gameOverScreen.SetActive(true);
+            gameOverText.text = $"You scored {scoreSystem.GetScore()} points!!";
         }
     }
 
