@@ -8,11 +8,9 @@ public class GameManager : MonoBehaviour
     public static event Action onPlayerDie;
     public static void onPlayerDied() 
     {
-        if (onPlayerDie != null) 
-        {
-            Time.timeScale = 0;
-            onPlayerDie();
-        }
+        Time.timeScale = 0;
+        onPlayerDie();
+        Debug.Log("Player has died");
     }
 
 }

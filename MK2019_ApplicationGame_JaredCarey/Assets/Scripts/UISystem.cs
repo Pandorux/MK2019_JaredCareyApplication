@@ -16,6 +16,7 @@ public class UISystem : MonoBehaviour
     void Start()
     {
         scoreSystem.onScoreChange += UpdateUI;
+        UpdateUI();
     }
 
     public void Pause() 

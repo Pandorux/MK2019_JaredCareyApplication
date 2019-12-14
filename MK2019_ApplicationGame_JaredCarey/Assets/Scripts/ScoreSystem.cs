@@ -43,7 +43,7 @@ public class ScoreSystem : MonoBehaviour
     {
         score += points * scoreMultiplier;
         onScoreChanged();
-        Debug.Log($"Current Score: {score}");
+        // Debug.Log($"Current Score: {score}");
     }
 
     protected void IncreaseScoreMultiplier(int amt) 
