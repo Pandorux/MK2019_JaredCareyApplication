@@ -120,6 +120,75 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &1708875969
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 201187451671344972, guid: ee04957df4356cc43b3ec7529863af92,
+        type: 3}
+      propertyPath: m_Name
+      value: TS_WaterPit Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 5061689257012179399, guid: ee04957df4356cc43b3ec7529863af92,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -18
+      objectReference: {fileID: 0}
+    - target: {fileID: 5061689257012179399, guid: ee04957df4356cc43b3ec7529863af92,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5061689257012179399, guid: ee04957df4356cc43b3ec7529863af92,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5061689257012179399, guid: ee04957df4356cc43b3ec7529863af92,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5061689257012179399, guid: ee04957df4356cc43b3ec7529863af92,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5061689257012179399, guid: ee04957df4356cc43b3ec7529863af92,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5061689257012179399, guid: ee04957df4356cc43b3ec7529863af92,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5061689257012179399, guid: ee04957df4356cc43b3ec7529863af92,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5061689257012179399, guid: ee04957df4356cc43b3ec7529863af92,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5061689257012179399, guid: ee04957df4356cc43b3ec7529863af92,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5061689257012179399, guid: ee04957df4356cc43b3ec7529863af92,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ee04957df4356cc43b3ec7529863af92, type: 3}
 --- !u!1001 &1018465449592306434
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -135,7 +204,7 @@ PrefabInstance:
     - target: {fileID: 831603537343372836, guid: 0de1a1a650f396349b26fe4425c5ef0a,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5728027212166371503, guid: 0de1a1a650f396349b26fe4425c5ef0a,
         type: 3}
@@ -205,6 +274,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TerrainSet_FlatGround
+      objectReference: {fileID: 0}
+    - target: {fileID: 4422206961955084349, guid: 0a2d3ead48af2194e8cfc384a4e0b108,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8767009467069521590, guid: 0a2d3ead48af2194e8cfc384a4e0b108,
         type: 3}
