@@ -19,7 +19,7 @@ public class LevelGenerator : MonoBehaviour
         GenerateLevel(true);
     }
 
-    public void GenerateLevel(bool spawnStartSet) 
+    void GenerateLevel(bool spawnStartSet) 
     {   
         Vector3 terrainEndPoint = Vector3.zero;
         GameObject terrainSet;
@@ -28,13 +28,13 @@ public class LevelGenerator : MonoBehaviour
         {
             if (spawnStartSet) 
             {
-                terrainSet = Instantiate(startingTerrainSet);
+                terrainSet = Instantiate(startingTerrainSet, terrainEndPoint, Quaternion.identity);
                 terrainEndPoint = terrainSet.transform.GetChild(0).position;
                 spawnStartSet = false;
             }
             else 
             {
-                terrainSet = Instantiate(terrainSets[0], terrainEndPoint, Quaternion.identity);
+                terrainSet = Instantiate(terrainSets[Random.Range(0, terrainSets.Length)], terrainEndPoint, Quaternion.identity);
                 
                 // if (terrainEndPoint != null)
                 //     Debug.Log($"Terrain Set Spawned at {terrainEndPoint}.");
