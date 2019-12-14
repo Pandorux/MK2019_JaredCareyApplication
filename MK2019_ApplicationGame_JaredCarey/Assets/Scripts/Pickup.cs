@@ -33,7 +33,7 @@ public class Pickup : MonoBehaviour
         if(destroyOnPickUp)
         {
             // TODO: Add Fade out effect
-            Destroy(this);
+            Destroy(gameObject);
         }
         else
         {
