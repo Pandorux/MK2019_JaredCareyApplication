@@ -39,14 +39,14 @@ public class ScoreSystem : MonoBehaviour
         return (int)scoreMultiplier;
     }
 
-    public void AddPoints(int points) 
+    public void AddPoints(float points) 
     {
         score += points * scoreMultiplier;
         onScoreChanged();
         // Debug.Log($"Current Score: {score}");
     }
 
-    protected void IncreaseScoreMultiplier(int amt) 
+    public void IncreaseMultiplier(float amt) 
     {
         scoreMultiplier += amt;
         onScoreChanged();
