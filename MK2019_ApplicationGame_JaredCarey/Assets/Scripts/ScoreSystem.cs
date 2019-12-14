@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -13,7 +14,7 @@ public class ScoreSystem : MonoBehaviour
     protected float scoreMultiplier = 1;
 
 
-    public Action onScoreChange;
+    public event Action onScoreChange;
     public void onScoreChanged()
     {
         if (onScoreChange != null)
