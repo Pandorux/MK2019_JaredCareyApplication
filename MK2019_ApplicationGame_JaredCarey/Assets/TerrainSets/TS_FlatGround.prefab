@@ -607,7 +607,7 @@ PrefabInstance:
     - target: {fileID: 186428505900244650, guid: 99ba9fa9b4c408a4691fc7cc59fd2cc1,
         type: 3}
       propertyPath: m_Name
-      value: TerrainSet_FlatGround
+      value: TS_FlatGround
       objectReference: {fileID: 0}
     - target: {fileID: 5071663243874605089, guid: 99ba9fa9b4c408a4691fc7cc59fd2cc1,
         type: 3}
@@ -667,12 +667,17 @@ PrefabInstance:
     - target: {fileID: 1193502011593811426, guid: 99ba9fa9b4c408a4691fc7cc59fd2cc1,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -17.275
+      value: -8.76
+      objectReference: {fileID: 0}
+    - target: {fileID: 1193502011593811426, guid: 99ba9fa9b4c408a4691fc7cc59fd2cc1,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3777704772112844131, guid: 99ba9fa9b4c408a4691fc7cc59fd2cc1,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 16
+      value: 8.75
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 99ba9fa9b4c408a4691fc7cc59fd2cc1, type: 3}
