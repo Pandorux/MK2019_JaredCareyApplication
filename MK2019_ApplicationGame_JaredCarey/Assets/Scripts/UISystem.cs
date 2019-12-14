@@ -7,15 +7,15 @@ using TMPro;
 
 public class UISystem : MonoBehaviour
 {
+    [SerializeField]
     protected ScoreSystem scoreSystem;
-    [Range(0, 3)]
     public TMP_Text scoreText;
     public TMP_Text multiplierText;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        scoreSystem.onScoreChange += UpdateUI;
     }
 
     public void Pause() 
@@ -46,4 +46,5 @@ public class UISystem : MonoBehaviour
             multiplierText.text = $"x{scoreSystem.GetMultiplier()}";
         }
     }
+
 }

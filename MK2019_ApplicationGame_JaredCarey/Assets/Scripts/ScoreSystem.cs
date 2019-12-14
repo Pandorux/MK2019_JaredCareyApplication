@@ -12,6 +12,16 @@ public class ScoreSystem : MonoBehaviour
     protected float pointsIncreaseRate = 1;
     protected float scoreMultiplier = 1;
 
+
+    public Action onScoreChange;
+    public void onScoreChanged()
+    {
+        if (onScoreChange != null)
+        {
+            onScoreChange();
+        }
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -31,13 +41,14 @@ public class ScoreSystem : MonoBehaviour
     public void AddPoints(int points) 
     {
         score += points * scoreMultiplier;
-
+        onScoreChanged();
         Debug.Log($"Current Score: {score}");
     }
 
     protected void IncreaseScoreMultiplier(int amt) 
     {
         scoreMultiplier += amt;
+        onScoreChanged();
     }
 
     protected IEnumerator IncreaseScoreOverTime(float delay)
