@@ -13,4 +13,9 @@ public class GameManager : MonoBehaviour
         Debug.Log("Player has died");
     }
 
+    void Start()
+    {
+        Time.timeScale = 1;
+    }
+
 }
