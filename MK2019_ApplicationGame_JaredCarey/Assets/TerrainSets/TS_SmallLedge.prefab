@@ -226,6 +226,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48280da4ca25140439c3dadbce9569e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!61 &6539599407024171722
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9024787442730123733}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 14, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1001 &51536219843256725
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -998,6 +1024,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: TerrainSet
       objectReference: {fileID: 0}
+    - target: {fileID: 186428505900244650, guid: 99ba9fa9b4c408a4691fc7cc59fd2cc1,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5071663243874605089, guid: 99ba9fa9b4c408a4691fc7cc59fd2cc1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1068,6 +1099,12 @@ PrefabInstance:
 --- !u!4 &4164146549186103134 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5071663243874605089, guid: 99ba9fa9b4c408a4691fc7cc59fd2cc1,
+    type: 3}
+  m_PrefabInstance: {fileID: 9198654878684356479}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &9024787442730123733 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 186428505900244650, guid: 99ba9fa9b4c408a4691fc7cc59fd2cc1,
     type: 3}
   m_PrefabInstance: {fileID: 9198654878684356479}
   m_PrefabAsset: {fileID: 0}

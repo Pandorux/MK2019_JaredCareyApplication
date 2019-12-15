@@ -44,8 +44,10 @@ public class LevelGenerator : MonoBehaviour
     /// object (2D physics only).
     /// </summary>
     /// <param name="other">The other Collider2D involved in this collision.</param>
-    void OnTriggerExit2D(Collider2D other)
+    void OnTriggerEnter2D(Collider2D other)
     {
+        Debug.Log($"{other.gameObject.name} entered level gen collider");
+
         if(other.gameObject.tag == "TerrainSet")
         {
             Debug.Log("Destroying Terrain Set");
