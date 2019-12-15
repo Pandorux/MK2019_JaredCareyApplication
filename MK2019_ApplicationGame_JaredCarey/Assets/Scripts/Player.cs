@@ -55,14 +55,9 @@ public class Player : MonoBehaviour
                 Jump();
             }
 
-            if(Input.GetKeyDown(KeyCode.Escape))
-            {
-                // TODO: Pause the Game
-            }
-
         #elif UNITY_ANDROID
 
-            if(Input.GetTouch > 0)
+            if(Input.touchCount > 0)
             {
                 Touch touch = Input.GetTouch(0);
 

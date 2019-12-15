@@ -12,15 +12,26 @@ public class LevelGenerator : MonoBehaviour
     GameObject[] terrainSets;
     [SerializeField]
     GameObject startingTerrainSet;
-
     Vector3 terrainEndPoint = Vector3.zero;
-
     int totalSpawnedTerrainSets;
 
     // Start is called before the first frame update
     void Start()
     {
+        maxNumberOfTerrainSets = terrainSets.Length < maxNumberOfTerrainSets ?
+            terrainSets.Length : maxNumberOfTerrainSets;
+
+        SetupObjectPool();
         GenerateLevel(true);
+    }
+
+    void SetupObjectPool()
+    {
+        for(int i = 0; i < terrainSets.Length; i++)
+        {
+            terrainSets[i] = Instantiate(terrainSets[i]);
+            terrainSets[i].SetActive(false);
+        }
     }
 
     void GenerateLevel(bool spawnStartSet) 
@@ -53,7 +64,16 @@ public class LevelGenerator : MonoBehaviour
         if(other.gameObject.tag == "TerrainSet")
         {
             Debug.Log("Destroying Terrain Set");
-            Destroy(other.gameObject);
+            other.gameObject.SetActive(false);
+            
+            if(other.gameObject.GetComponent<TerrainSet>())
+            {
+                foreach(Pickup pickup in other.gameObject.GetComponent<TerrainSet>().pickups)
+                {
+                    pickup.Reset();
+                }
+            }
+
             AddRandomTerrainSet();
         }
     }
@@ -73,20 +93,29 @@ public class LevelGenerator : MonoBehaviour
         }
     }
 
+    // TODO: This will become an infinite loop if all terrain sets are active
     void AddRandomTerrainSet()
     {
-        GameObject terrainSet = Instantiate(terrainSets[Random.Range(0, terrainSets.Length)], terrainEndPoint, Quaternion.identity);
-        
-        // if (terrainEndPoint != null)
-        //     Debug.Log($"Terrain Set Spawned at {terrainEndPoint}.");
+        int rand = Random.Range(0, terrainSets.Length);
+        GameObject terrainSet = terrainSets[rand];
 
-        terrainEndPoint = terrainSet.transform.GetChild(0).position;
+        if(!(terrainSet.active))
+        {
+            terrainSet.transform.position = terrainEndPoint;
+            terrainSet.SetActive(true);
+            terrainEndPoint = terrainSet.transform.GetChild(0).position;
 
-        // Simplifies debugging the level generator
-        #if UNITY_EDITOR
-            terrainSet.name = NameTerrainSet(terrainSet.name);
-            Debug.Log($"Spawned {terrainSet.name}");
-        #endif
+            // Simplifies debugging the level generator
+            #if UNITY_EDITOR
+                //terrainSet.name = NameTerrainSet(terrainSet.name);
+                Debug.Log($"Spawned {terrainSet.name}");
+            #endif
+        }
+        else 
+        {
+            AddRandomTerrainSet();
+        }
+
     }
 
     protected string NameTerrainSet(string terrainSetName)

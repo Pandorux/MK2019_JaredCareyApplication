@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4555732798500894580}
   - component: {fileID: 4555732798500894583}
   - component: {fileID: 1322995317}
+  - component: {fileID: 8928343320265635076}
   m_Layer: 0
   m_Name: Chest1 Image1x1 (1)
   m_TagString: Untagged
@@ -127,6 +128,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.71, y: 1.49}
   m_EdgeRadius: 0
+--- !u!114 &8928343320265635076
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4555732798500894582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 938c79706902c7c48b4fdaf000545d81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destroyOnPickUp: 0
+  increasePoints: 50
+  increaseMultiplier: 0
+  animator: {fileID: 4555732798500894583}
+  animationToPlayOnPickup: Open
+  defaultAnimation: Close
 --- !u!1 &6013802641762954511
 GameObject:
   m_ObjectHideFlags: 0
@@ -136,7 +155,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9146400552143441485}
-  - component: {fileID: 4555732797337549060}
   m_Layer: 0
   m_Name: PointsChest
   m_TagString: Untagged
@@ -159,18 +177,3 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4555732797337549060
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6013802641762954511}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 938c79706902c7c48b4fdaf000545d81, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  destroyOnPickUp: 0
-  increasePoints: 50
-  increaseMultiplier: 0
