@@ -15,6 +15,8 @@ public class LevelGenerator : MonoBehaviour
 
     Vector3 terrainEndPoint = Vector3.zero;
 
+    int totalSpawnedTerrainSets;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -46,7 +48,7 @@ public class LevelGenerator : MonoBehaviour
     /// <param name="other">The other Collider2D involved in this collision.</param>
     void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log($"{other.gameObject.name} entered level gen collider");
+        //Debug.Log($"{other.gameObject.name} entered level gen collider");
 
         if(other.gameObject.tag == "TerrainSet")
         {
@@ -62,6 +64,12 @@ public class LevelGenerator : MonoBehaviour
         {
             terrainSet = Instantiate(terrainSet, terrainEndPoint, Quaternion.identity);
             terrainEndPoint = terrainSet.transform.GetChild(0).position;
+
+            // Simplifies debugging the level generator
+            #if UNITY_EDITOR
+                terrainSet.name = NameTerrainSet(terrainSet.name);
+                Debug.Log($"Spawned {terrainSet.name}");
+            #endif
         }
     }
 
@@ -73,5 +81,18 @@ public class LevelGenerator : MonoBehaviour
         //     Debug.Log($"Terrain Set Spawned at {terrainEndPoint}.");
 
         terrainEndPoint = terrainSet.transform.GetChild(0).position;
+
+        // Simplifies debugging the level generator
+        #if UNITY_EDITOR
+            terrainSet.name = NameTerrainSet(terrainSet.name);
+            Debug.Log($"Spawned {terrainSet.name}");
+        #endif
+    }
+
+    protected string NameTerrainSet(string terrainSetName)
+    {
+        totalSpawnedTerrainSets++;
+        terrainSetName = $"TS_{totalSpawnedTerrainSets} - {terrainSetName}";
+        return terrainSetName;
     }
 }
