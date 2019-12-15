@@ -17,7 +17,11 @@ public class UISystem : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        scoreSystem.onScoreChange += UpdateUI;
+        if(scoreSystem != null)
+        {
+            scoreSystem.onScoreChange += UpdateUI;
+        }
+        
         GameManager.onPlayerDie += ShowGameOverScreen;
         UpdateUI();
     }
@@ -40,6 +44,11 @@ public class UISystem : MonoBehaviour
     public void Quit() 
     {
         Application.Quit();
+    }
+
+    public void LoadScene(string sceneName)
+    {
+        SceneManager.LoadScene(sceneName);
     }
 
     protected void UpdateUI()
