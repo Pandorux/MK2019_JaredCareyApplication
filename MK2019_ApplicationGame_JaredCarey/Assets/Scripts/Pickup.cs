@@ -8,9 +8,9 @@ public class Pickup : MonoBehaviour
     public bool destroyOnPickUp;
     public float increasePoints;
     public float increaseMultiplier;
-
     public Animator animator;
     public string animationToPlayOnPickup;
+    public string defaultAnimation;
 
     void Start()
     {
@@ -36,7 +36,7 @@ public class Pickup : MonoBehaviour
         if(destroyOnPickUp)
         {
             // TODO: Add Fade out effect
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         }
         else
         {
@@ -44,6 +44,19 @@ public class Pickup : MonoBehaviour
             {
                 animator.Play(animationToPlayOnPickup);
             }
+        }
+    }
+
+    public void Reset() 
+    {
+        if (animator != null)
+        {
+            animator.Play(defaultAnimation);
+        }
+
+        if(destroyOnPickUp)
+        {
+            gameObject.SetActive(true);
         }
     }
 }
