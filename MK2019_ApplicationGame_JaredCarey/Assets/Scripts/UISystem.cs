@@ -13,6 +13,7 @@ public class UISystem : MonoBehaviour
     public TMP_Text multiplierText;
     public GameObject gameOverScreen;
     public TMP_Text gameOverText;
+    public GameObject loadScreen;
 
     // Start is called before the first frame update
     void Start()
@@ -48,6 +49,7 @@ public class UISystem : MonoBehaviour
 
     public void LoadScene(string sceneName)
     {
+        SetAllUIInteractability(false);
         SceneManager.LoadScene(sceneName);
     }
 
@@ -68,5 +70,20 @@ public class UISystem : MonoBehaviour
             gameOverText.text = $"You scored {scoreSystem.GetScore()} points!!";
         }
     }
+
+    protected void SetAllUIInteractability(bool isInteractable)
+    {
+        GetComponent<GraphicRaycaster>().enabled = isInteractable;
+    }
+
+    // protected IEnumerator LoadSceneWithFadeOut(string sceneName)
+    // {
+    //     GameManager.canLoadNewLevel = false;
+    //     loadScreen.SetActive(true);
+    //     Animator animator = loadScreen.GetComponent<Animator>();
+    //     animator.Play("FadeOut");
+    //     yield return new WaitForSeconds(1.0f);
+    //     SceneManager.LoadScene(sceneName);
+    // }
 
 }
