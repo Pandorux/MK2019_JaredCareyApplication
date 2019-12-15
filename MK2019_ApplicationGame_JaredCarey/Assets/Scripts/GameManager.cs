@@ -2,10 +2,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     public static event Action onPlayerDie;
+    public static bool canLoadNewLevel = true;
     public static void onPlayerDied() 
     {
         Time.timeScale = 0;
@@ -13,9 +15,10 @@ public class GameManager : MonoBehaviour
         Debug.Log("Player has died");
     }
 
-    void Start()
+    void Awake()
     {
         Time.timeScale = 1;
+        canLoadNewLevel = true;
     }
 
 }
