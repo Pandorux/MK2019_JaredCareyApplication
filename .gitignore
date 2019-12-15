@@ -21,6 +21,7 @@
 
 # Ignore Imported Unity Assets
 /**/BayatGames
+/**/TextMesh Pro
 
 # Visual Studio cache directory
 .vs/
