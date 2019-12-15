@@ -9,6 +9,9 @@ public class Pickup : MonoBehaviour
     public float increasePoints;
     public float increaseMultiplier;
 
+    public Animator animator;
+    public string animationToPlayOnPickup;
+
     void Start()
     {
         scoreSystem = GameObject.Find("GameUI")?.GetComponent<ScoreSystem>();
@@ -37,8 +40,10 @@ public class Pickup : MonoBehaviour
         }
         else
         {
-            
-            // TODO: Play Animation
+            if (animator != null)
+            {
+                animator.Play(animationToPlayOnPickup);
+            }
         }
     }
 }

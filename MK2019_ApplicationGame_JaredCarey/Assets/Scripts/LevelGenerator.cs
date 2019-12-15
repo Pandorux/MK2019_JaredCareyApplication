@@ -66,10 +66,10 @@ public class LevelGenerator : MonoBehaviour
             terrainEndPoint = terrainSet.transform.GetChild(0).position;
 
             // Simplifies debugging the level generator
-            #if UNITY_EDITOR
-                terrainSet.name = NameTerrainSet(terrainSet.name);
-                Debug.Log($"Spawned {terrainSet.name}");
-            #endif
+            // #if UNITY_EDITOR
+            //     terrainSet.name = NameTerrainSet(terrainSet.name);
+            //     Debug.Log($"Spawned {terrainSet.name}");
+            // #endif
         }
     }
 
@@ -83,10 +83,10 @@ public class LevelGenerator : MonoBehaviour
         terrainEndPoint = terrainSet.transform.GetChild(0).position;
 
         // Simplifies debugging the level generator
-        #if UNITY_EDITOR
-            terrainSet.name = NameTerrainSet(terrainSet.name);
-            Debug.Log($"Spawned {terrainSet.name}");
-        #endif
+        // #if UNITY_EDITOR
+        //     terrainSet.name = NameTerrainSet(terrainSet.name);
+        //     Debug.Log($"Spawned {terrainSet.name}");
+        // #endif
     }
 
     protected string NameTerrainSet(string terrainSetName)
