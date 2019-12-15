@@ -588,7 +588,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d463d4fbd8961640905451b26c14896, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxNumberOfTerrainSets: 100
+  maxNumberOfTerrainSets: 5
   terrainSets:
   - {fileID: 4422206961955084349, guid: 0a2d3ead48af2194e8cfc384a4e0b108, type: 3}
   - {fileID: 3443929866743970552, guid: cdfd13ad7c8fb7b4baff0bf35adfadb6, type: 3}
