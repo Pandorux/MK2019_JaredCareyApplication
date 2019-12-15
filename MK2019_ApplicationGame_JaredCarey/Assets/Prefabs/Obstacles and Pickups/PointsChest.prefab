@@ -145,6 +145,7 @@ MonoBehaviour:
   increaseMultiplier: 0
   animator: {fileID: 4555732798500894583}
   animationToPlayOnPickup: Open
+  defaultAnimation: Close
 --- !u!1 &6013802641762954511
 GameObject:
   m_ObjectHideFlags: 0

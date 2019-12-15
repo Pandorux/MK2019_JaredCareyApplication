@@ -176,3 +176,4 @@ MonoBehaviour:
   increaseMultiplier: 1
   animator: {fileID: 6693913267194218430}
   animationToPlayOnPickup: Open
+  defaultAnimation: Close

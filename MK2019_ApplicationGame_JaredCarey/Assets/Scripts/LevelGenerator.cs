@@ -65,6 +65,15 @@ public class LevelGenerator : MonoBehaviour
         {
             Debug.Log("Destroying Terrain Set");
             other.gameObject.SetActive(false);
+            
+            if(other.gameObject.GetComponent<TerrainSet>())
+            {
+                foreach(Pickup pickup in other.gameObject.GetComponent<TerrainSet>().pickups)
+                {
+                    pickup.Reset();
+                }
+            }
+
             AddRandomTerrainSet();
         }
     }
