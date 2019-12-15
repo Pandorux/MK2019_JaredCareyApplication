@@ -62,7 +62,7 @@ public class Player : MonoBehaviour
 
         #elif UNITY_ANDROID
 
-            if(Input.GetTouch > 0)
+            if(Input.touchCount > 0)
             {
                 Touch touch = Input.GetTouch(0);
 
