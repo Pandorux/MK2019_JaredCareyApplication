@@ -12,6 +12,22 @@ public class Player : MonoBehaviour
     [Tooltip("How high the player will jump")]
     [Range(0, 10)]
     public float jumpForce = 5;
+    bool isJumping;
+
+    bool canJump
+    {
+        get
+        {
+            if(rigidBody.velocity.y > 0.25)
+                return false;
+
+            if(rigidBody.velocity.y < -0.25)
+                return false;
+
+
+            return true;
+        }
+    }
 
     Rigidbody2D rigidBody;
 
@@ -46,7 +62,15 @@ public class Player : MonoBehaviour
 
         #elif UNITY_ANDROID
 
-            // TODO: Mobile Input
+            if(Input.GetTouch > 0)
+            {
+                Touch touch = Input.GetTouch(0);
+
+                if(touch.phase == TouchPhase.Began)
+                {
+                    Jump();
+                }
+            }
 
         #endif
     }
@@ -62,16 +86,10 @@ public class Player : MonoBehaviour
 
     void Jump()
     {
-
-        rigidBody.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
-
-        // if (rigidBody.velocity.y < 0)
-        // {
-        //     rigidBody.velocity += Vector2.up * Physics2D.gravity.y * (2.5f - 1) * Time.deltaTime;
-        // }
-        // else if (rigidBody.velocity.y > 0)
-        // {
-        //     rigidBody.velocity += Vector2.up * Physics2D.gravity.y * (2f - 1) * Time.deltaTime;
-        // }
+        if(canJump)
+        {
+            rigidBody.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
+            isJumping = true;
+        }
     }
 }
