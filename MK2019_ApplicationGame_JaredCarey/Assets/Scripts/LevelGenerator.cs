@@ -13,6 +13,8 @@ public class LevelGenerator : MonoBehaviour
     [SerializeField]
     GameObject startingTerrainSet;
 
+    Vector3 terrainEndPoint = Vector3.zero;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,27 +23,53 @@ public class LevelGenerator : MonoBehaviour
 
     void GenerateLevel(bool spawnStartSet) 
     {   
-        Vector3 terrainEndPoint = Vector3.zero;
         GameObject terrainSet;
 
         for (int i = 0; i < maxNumberOfTerrainSets; i++) 
         {
             if (spawnStartSet) 
             {
-                terrainSet = Instantiate(startingTerrainSet, terrainEndPoint, Quaternion.identity);
-                terrainEndPoint = terrainSet.transform.GetChild(0).position;
+                AddTerrainSet(startingTerrainSet);
                 spawnStartSet = false;
             }
             else 
-            {
-                terrainSet = Instantiate(terrainSets[Random.Range(0, terrainSets.Length)], terrainEndPoint, Quaternion.identity);
-                
-                // if (terrainEndPoint != null)
-                //     Debug.Log($"Terrain Set Spawned at {terrainEndPoint}.");
-
-                terrainEndPoint = terrainSet.transform.GetChild(0).position;
-
+            {   
+                AddRandomTerrainSet();
             }
         }
+    }
+
+    /// <summary>
+    /// Sent when another object enters a trigger collider attached to this
+    /// object (2D physics only).
+    /// </summary>
+    /// <param name="other">The other Collider2D involved in this collision.</param>
+    void OnTriggerExit2D(Collider2D other)
+    {
+        if(other.gameObject.tag == "TerrainSet")
+        {
+            Debug.Log("Destroying Terrain Set");
+            Destroy(other.gameObject);
+            AddRandomTerrainSet();
+        }
+    }
+
+    void AddTerrainSet(GameObject terrainSet)
+    {
+        if(terrainSet)
+        {
+            terrainSet = Instantiate(terrainSet, terrainEndPoint, Quaternion.identity);
+            terrainEndPoint = terrainSet.transform.GetChild(0).position;
+        }
+    }
+
+    void AddRandomTerrainSet()
+    {
+        GameObject terrainSet = Instantiate(terrainSets[Random.Range(0, terrainSets.Length)], terrainEndPoint, Quaternion.identity);
+        
+        // if (terrainEndPoint != null)
+        //     Debug.Log($"Terrain Set Spawned at {terrainEndPoint}.");
+
+        terrainEndPoint = terrainSet.transform.GetChild(0).position;
     }
 }

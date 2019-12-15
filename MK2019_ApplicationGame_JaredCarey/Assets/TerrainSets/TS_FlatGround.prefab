@@ -226,6 +226,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TS_FlatGround
       objectReference: {fileID: 0}
+    - target: {fileID: 186428505900244650, guid: 99ba9fa9b4c408a4691fc7cc59fd2cc1,
+        type: 3}
+      propertyPath: m_TagString
+      value: TerrainSet
+      objectReference: {fileID: 0}
     - target: {fileID: 5071663243874605089, guid: 99ba9fa9b4c408a4691fc7cc59fd2cc1,
         type: 3}
       propertyPath: m_LocalPosition.x
