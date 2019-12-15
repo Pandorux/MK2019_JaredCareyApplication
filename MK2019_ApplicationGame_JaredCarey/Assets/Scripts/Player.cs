@@ -55,7 +55,7 @@ public class Player : MonoBehaviour
                 Jump();
             }
 
-        #elif UNITY_ANDROID
+        #elif UNITY_ANDROID || UNITY_IOS 
 
             if(Input.touchCount > 0)
             {
