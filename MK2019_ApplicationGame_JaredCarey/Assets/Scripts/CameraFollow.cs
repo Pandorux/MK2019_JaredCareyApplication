@@ -8,7 +8,7 @@ public class CameraFollow : MonoBehaviour
     [SerializeField]
     Transform target;
     [SerializeField]
-    Vector2 cameraOffset;
+    Vector3 cameraOffset;
 
     // Update is called once per frame
     void Update()
@@ -19,9 +19,8 @@ public class CameraFollow : MonoBehaviour
     void Follow()
     {
         Vector2 cameraPos = target.position;
-        cameraPos = cameraPos - cameraOffset;
+        cameraPos = new Vector2(cameraPos.x - cameraOffset.x, cameraPos.y - cameraOffset.y);
 
-        // TODO: Make this more dynamic when needed
-        transform.position = new Vector3(cameraPos.x, cameraPos.y, -10);
+        transform.position = new Vector3(cameraPos.x, cameraPos.y, cameraOffset.z);
     }
 }
