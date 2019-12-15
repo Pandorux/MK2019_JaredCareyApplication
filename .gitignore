@@ -20,9 +20,7 @@
 [Aa]ssets/Plugins/Editor/JetBrains*
 
 # Ignore Imported Unity Assets
-/**/BayatGames
 /**/TextMesh Pro
-/**/Puzzle stage & settings GUI Pack
 
 # Visual Studio cache directory
 .vs/
